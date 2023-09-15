@@ -12,7 +12,6 @@ soup = BeautifulSoup(response.text, "html.parser")
 r = list(soup.find_all('span', style="font-family:arial ;font-size:12;color: #006699"))
 sett = r[1].find_all('a')
 j = 1
-sp = -1
 article = open(f"a.csv", "w", encoding="utf-8")
 topic = open(f"t.csv", "w", encoding="utf-8")
 for  i in sett:
