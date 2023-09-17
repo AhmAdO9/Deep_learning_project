@@ -5,8 +5,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+
+
 topic = list(open("topics.csv","r", encoding="utf-8"))
 article = list(open("articles.csv","r",encoding="utf-8"))
+summary = list(open("summary.csv","r",encoding="utf-8"))
 for b in range(0,30):
     browser = webdriver.Chrome()
     browser.get("https://docs.google.com/forms/d/e/1FAIpQLSdrKj0TsGxNY1Hfks2Y8QyW4K-Xr4IW4Yvd23lxTCmqyivDEQ/viewform")
@@ -35,16 +38,16 @@ for b in range(0,30):
             s1[n].send_keys(article[n])
             n+=1
         if m <=5 and l <=2 :
-            s1[m].send_keys(f"{article[l][:400]}...")
+            s1[m].send_keys(f"{summary[l]}...")
             m+=1
             l+=1
+
         j+=1
     for i in range(0,3):
         article.pop(0)
         topic.pop(0)
-    
-    
-    
-    # browser.find_element(By.XPATH,'//span[@class="l4V7wb Fxmcue"] //span[text()="Submit"]').click()
+        summary.pop(0)
+
+    browser.find_element(By.XPATH,'//span[@class="l4V7wb Fxmcue"] //span[text()="Submit"]').click()
         
 
