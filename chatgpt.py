@@ -3,7 +3,7 @@ import openai
 from tqdm import tqdm
 
 
-openai.api_key = "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"
+openai.api_key = "API_KEY"
 
     
 def get_completion(prompt, model="gpt-3.5-turbo"):
